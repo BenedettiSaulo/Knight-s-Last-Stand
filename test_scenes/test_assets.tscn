@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://di4vl6fpvtepx"]
+
+[ext_resource type="Texture2D" uid="uid://bnu4j5xcc6yo1" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_kcltl"]
+[ext_resource type="Texture2D" uid="uid://q6kgyhxsufdp" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Purple/Pawn_Purple.png" id="2_6k5r8"]
+[ext_resource type="Texture2D" uid="uid://dl3bj36q5hftr" path="res://addons/Tiny Swords/Factions/Knights/Troops/Dead/Dead.png" id="3_vrhlq"]
+[ext_resource type="Texture2D" uid="uid://d2ad2h2qq136l" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Purple/Archer_Purlple.png" id="4_wexd2"]
+[ext_resource type="Texture2D" uid="uid://mls4iqx1nxww" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Barrel/Purple/Barrel_Purple.png" id="5_hq2tg"]
+[ext_resource type="Texture2D" uid="uid://b6mjqqorol7kj" path="res://addons/Tiny Swords/Factions/Goblins/Troops/TNT/Purple/TNT_Purple.png" id="6_bav4j"]
+[ext_resource type="Texture2D" uid="uid://c4461m5phmlf0" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Purple/Torch_Purple.png" id="7_5jbd1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WarriorPurple" type="Sprite2D" parent="."]
+position = Vector2(292, 432)
+texture = ExtResource("1_kcltl")
+
+[node name="PawnPurple" type="Sprite2D" parent="."]
+position = Vector2(1479, 235)
+texture = ExtResource("2_6k5r8")
+
+[node name="Dead" type="Sprite2D" parent="."]
+position = Vector2(1439, 1000)
+texture = ExtResource("3_vrhlq")
+
+[node name="ArcherPurlple" type="Sprite2D" parent="."]
+position = Vector2(2820, 333)
+texture = ExtResource("4_wexd2")
+
+[node name="BarrelPurple" type="Sprite2D" parent="."]
+position = Vector2(163, 1600)
+texture = ExtResource("5_hq2tg")
+
+[node name="TntPurple" type="Sprite2D" parent="."]
+position = Vector2(1262, 1555)
+texture = ExtResource("6_bav4j")
+
+[node name="TorchPurple" type="Sprite2D" parent="."]
+position = Vector2(2648, 1742)
+texture = ExtResource("7_5jbd1")
