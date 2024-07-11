@@ -21,6 +21,9 @@ extends CharacterBody2D
 @onready var sprite_player: Sprite2D = $Sprite2D
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
+
+signal meat_collected(value: int)
 
 var input_vector: Vector2 = Vector2(0, 0)
 var is_running: bool = false
@@ -29,6 +32,10 @@ var is_attacking: bool = false
 var attack_cooldown: float = 0.0
 var hitbox_cooldown: float = 0.0
 var ritual_cooldown: float = 0.0
+
+func _ready() -> void:
+	GameManager.player = self
+	meat_collected.connect(func(value: int): GameManager.meat_counter += 1)
 
 func _process(delta: float) -> void:
 	GameManager.player_position = position
@@ -51,6 +58,10 @@ func _process(delta: float) -> void:
 	
 	# Ritual
 	update_ritual(delta)
+	
+	# Atualiazar Health Bar
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 
 #func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("ui_accept"):
@@ -92,7 +103,6 @@ func update_ritual(delta: float) -> void:
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
-	
 
 func read_input() -> void:
 	# Obter o input vector
@@ -201,6 +211,8 @@ func damage(amount: int) -> void:
 		die()
 
 func die() -> void:
+	GameManager.end_game()
+	
 	if death_prefab:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position

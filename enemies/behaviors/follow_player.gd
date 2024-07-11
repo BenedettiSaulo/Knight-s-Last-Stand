@@ -13,6 +13,8 @@ func _ready() -> void:
 	sprite = enemy.get_node("AnimatedSprite2D")
 
 func _physics_process(delta: float) -> void:
+	if GameManager.is_game_over: return
+	
 	#Calcular direção
 	var player_position = GameManager.player_position
 	var diference = player_position - enemy.position
